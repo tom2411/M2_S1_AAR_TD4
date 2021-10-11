@@ -14,6 +14,12 @@ public class Formation {
     @ManyToMany(mappedBy = "reserve")
     private List<Salle> reserveeA;
 
+    @ManyToMany(mappedBy = "inscritEn")
+    private List<Etudiant> inscrits;
+
+    @ManyToMany(mappedBy = "etudiantsDe")
+    private List<Groupe> groupes;
+
     public Formation() {}
 
     public Formation(String intituleForm) {
@@ -36,11 +42,27 @@ public class Formation {
         this.intituleForm = intituleForm;
     }
 
-    public Salle getReserveeA() {
+    public List<Salle> getReserveeA() {
         return reserveeA;
     }
 
-    public void setReserveeA(Salle reserveeA) {
+    public void setReserveeA(List<Salle> reserveeA) {
         this.reserveeA = reserveeA;
+    }
+
+    public List<Etudiant> getInscrits() {
+        return inscrits;
+    }
+
+    public void setInscrits(List<Etudiant> inscrits) {
+        this.inscrits = inscrits;
+    }
+
+    public List<Groupe> getGroupes() {
+        return groupes;
+    }
+
+    public void setGroupes(List<Groupe> groupes) {
+        this.groupes = groupes;
     }
 }

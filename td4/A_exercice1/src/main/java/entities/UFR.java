@@ -16,7 +16,6 @@ public class UFR {
     private String sigleUFR;
 
     @OneToMany(mappedBy = "gerePar")
-    @Nullable
     private List<Batiment> batiments;
 
     public UFR() { }
@@ -44,4 +43,6 @@ public class UFR {
     public void setBatiments(List<Batiment> batiments) {
         this.batiments = batiments;
     }
+
+
 }

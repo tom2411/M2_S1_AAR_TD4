@@ -17,6 +17,17 @@ public class Salle {
     @ManyToMany
     private List<Formation> reserve;
 
+    public List<Creneau> getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(List<Creneau> occupation) {
+        this.occupation = occupation;
+    }
+
+    @ManyToMany
+    private List<Creneau> occupation;
+
     public Salle() {
     }
 
@@ -47,4 +58,6 @@ public class Salle {
     public void setReserve(List<Formation> reserve) {
         this.reserve = reserve;
     }
+
+
 }

@@ -12,11 +12,9 @@ public class Batiment {
     private String nomBatiment;
 
     @ManyToOne
-    @Nullable
     private UFR gerePar;
 
     @OneToMany
-    @Nullable
     private List<Salle> salles;
 
     public Batiment() { }
@@ -44,4 +42,14 @@ public class Batiment {
     public void setGerePar(UFR gerePar) {
         this.gerePar = gerePar;
     }
+
+    public List<Salle> getSalles() {
+        return salles;
+    }
+
+    public void setSalles(List<Salle> salles) {
+        this.salles = salles;
+    }
+
+
 }
