@@ -1,14 +1,14 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Formation {
     @Id
+    @Column(name = "IDFORM")
     private String idForm;
+    @Column(name = "INTITULEFORM")
     private String intituleForm;
 
     @ManyToMany(mappedBy = "reserveeA")

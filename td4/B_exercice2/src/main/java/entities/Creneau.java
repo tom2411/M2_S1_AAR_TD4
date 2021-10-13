@@ -1,10 +1,7 @@
 package entities;
 
 import javax.persistence.*;
-import javax.swing.*;
-import javax.websocket.OnError;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 public class Creneau {
