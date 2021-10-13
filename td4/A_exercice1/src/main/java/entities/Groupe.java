@@ -2,25 +2,22 @@ package entities;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Groupe {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private int idGroupe;
     private String intitule;
 
     @ManyToMany(mappedBy = "appartient")
-    private List<Etudiant> membres;
+    private Set<Etudiant> membres;
 
     @ManyToMany
-    private List<Formation> etudiantsDe;
+    private Set<Formation> etudiantsDe;
 
-    @OneToMany
+    @OneToMany(mappedBy = "concerne")
     private List<Creneau> creneaux;
-
-    public Groupe() {
-    }
 
     public int getIdGroupe() {
         return idGroupe;
@@ -30,27 +27,23 @@ public class Groupe {
         this.idGroupe = idGroupe;
     }
 
-    public String getIntitule() {
-        return intitule;
-    }
-
     public void setIntitule(String intitule) {
         this.intitule = intitule;
     }
 
-    public List<Etudiant> getMembres() {
+    public Set<Etudiant> getMembres() {
         return membres;
     }
 
-    public void setMembres(List<Etudiant> membres) {
+    public void setMembres(Set<Etudiant> membres) {
         this.membres = membres;
     }
 
-    public List<Formation> getEtudiantsDe() {
+    public Set<Formation> getEtudiantsDe() {
         return etudiantsDe;
     }
 
-    public void setEtudiantsDe(List<Formation> etudiantsDe) {
+    public void setEtudiantsDe(Set<Formation> etudiantsDe) {
         this.etudiantsDe = etudiantsDe;
     }
 

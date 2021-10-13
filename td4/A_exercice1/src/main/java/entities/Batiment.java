@@ -14,42 +14,6 @@ public class Batiment {
     @ManyToOne
     private UFR gerePar;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Salle> salles;
-
-    public Batiment() { }
-
-    public Batiment(String nomBatiment) {
-        this.nomBatiment= nomBatiment;
-    }
-
-    public int getIdBatiment() {
-        return idBatiment;
-    }
-
-    public String getNomBatiment() {
-        return nomBatiment;
-    }
-
-    public void setNomBatiment(String nomBatiment) {
-        this.nomBatiment = nomBatiment;
-    }
-
-    public UFR getGerePar() {
-        return gerePar;
-    }
-
-    public void setGerePar(UFR gerePar) {
-        this.gerePar = gerePar;
-    }
-
-    public List<Salle> getSalles() {
-        return salles;
-    }
-
-    public void setSalles(List<Salle> salles) {
-        this.salles = salles;
-    }
-
-
 }

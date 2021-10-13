@@ -16,21 +16,15 @@ public class Creneau {
     @Basic
     private LocalDateTime fin;
 
-    @OneToOne
+    @ManyToOne
     private Groupe concerne;
 
     @ManyToOne
     private Salle dans;
 
-    public Creneau() {
-    }
 
     public int getCreneau() {
         return creneau;
-    }
-
-    public void setCreneau(int creneau) {
-        this.creneau = creneau;
     }
 
     public LocalDateTime getDebut() {
@@ -64,6 +58,4 @@ public class Creneau {
     public void setDans(Salle dans) {
         this.dans = dans;
     }
-
-
 }

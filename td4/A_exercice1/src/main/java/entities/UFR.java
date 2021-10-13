@@ -15,18 +15,12 @@ public class UFR {
     @OneToMany(mappedBy = "gerePar")
     private List<Batiment> batiments;
 
-    public UFR() { }
-
-    public UFR(String sigleUFR) {
-        this.sigleUFR = sigleUFR;
-    }
-
     public int getIdUFR() {
         return idUFR;
     }
 
-    public String getSigleUFR() {
-        return sigleUFR;
+    public void setIdUFR(int idUFR) {
+        this.idUFR = idUFR;
     }
 
     public void setSigleUFR(String sigleUFR) {

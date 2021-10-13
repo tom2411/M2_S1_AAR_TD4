@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Etudiant {
@@ -15,28 +16,13 @@ public class Etudiant {
     private String nom;
 
     @ManyToMany
-    private List<Formation> inscritEn;
+    private Set<Formation> inscritEn;
 
     @ManyToMany
-    private List<Groupe> appartient;
-
-    public Etudiant() {
-    }
-
-    public List<Groupe> getAppartient() {
-        return appartient;
-    }
-
-    public void setAppartient(List<Groupe> appartient) {
-        this.appartient = appartient;
-    }
+    private Set<Groupe> appartient;
 
     public String getNumEtu() {
         return numEtu;
-    }
-
-    public void setNumEtu(String numEtu) {
-        this.numEtu = numEtu;
     }
 
     public String getPrenom() {
@@ -55,13 +41,19 @@ public class Etudiant {
         this.nom = nom;
     }
 
-    public List<Formation> getInscritEn() {
+    public Set<Formation> getInscritEn() {
         return inscritEn;
     }
 
-    public void setInscritEn(List<Formation> inscritEn) {
+    public void setInscritEn(Set<Formation> inscritEn) {
         this.inscritEn = inscritEn;
     }
 
+    public Set<Groupe> getAppartient() {
+        return appartient;
+    }
 
+    public void setAppartient(Set<Groupe> appartient) {
+        this.appartient = appartient;
+    }
 }

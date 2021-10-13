@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Formation {
@@ -12,26 +13,16 @@ public class Formation {
     private String intituleForm;
 
     @ManyToMany(mappedBy = "reserveeA")
-    private List<Salle> reserve;
+    private Set<Salle> reserve;
 
     @ManyToMany(mappedBy = "inscritEn")
-    private List<Etudiant> inscrits;
+    private Set<Etudiant> inscrits;
 
     @ManyToMany(mappedBy = "etudiantsDe")
-    private List<Groupe> groupes;
-
-    public Formation() {}
-
-    public Formation(String intituleForm) {
-        this.intituleForm = intituleForm;
-    }
+    private Set<Groupe> groupes;
 
     public String getIdForm() {
         return idForm;
-    }
-
-    public void setIdForm(String idForm) {
-        this.idForm = idForm;
     }
 
     public String getIntituleForm() {
@@ -42,19 +33,27 @@ public class Formation {
         this.intituleForm = intituleForm;
     }
 
-    public List<Etudiant> getInscrits() {
+    public Set<Salle> getReserve() {
+        return reserve;
+    }
+
+    public void setReserve(Set<Salle> reserve) {
+        this.reserve = reserve;
+    }
+
+    public Set<Etudiant> getInscrits() {
         return inscrits;
     }
 
-    public void setInscrits(List<Etudiant> inscrits) {
+    public void setInscrits(Set<Etudiant> inscrits) {
         this.inscrits = inscrits;
     }
 
-    public List<Groupe> getGroupes() {
+    public Set<Groupe> getGroupes() {
         return groupes;
     }
 
-    public void setGroupes(List<Groupe> groupes) {
+    public void setGroupes(Set<Groupe> groupes) {
         this.groupes = groupes;
     }
 }
